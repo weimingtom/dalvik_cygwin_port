@@ -1,0 +1,53 @@
+Processing '../vendor/app.dex'...
+[android_log_print][VERBOSE][dalvikvm]+++ adler32 checksum (6fa96aed) verified
+Opened '../vendor/app.dex', DEX version '035'
+Class #0            -
+  Class descriptor  : 'Ltutorial1/HelloWorld;'
+  Access flags      : 0x0001 (PUBLIC)
+  Superclass        : 'Ljava/lang/Object;'
+  Interfaces        -
+  Static fields     -
+  Instance fields   -
+  Direct methods    -
+    #0              : (in Ltutorial1/HelloWorld;)
+      name          : '<init>'
+      type          : '()V'
+      access        : 0x10001 (PUBLIC CONSTRUCTOR)
+      code          -
+      registers     : 1
+      ins           : 1
+      outs          : 1
+      insns size    : 4 16-bit code units
+000138:                                        |[000138] tutorial1.HelloWorld.<init>:()V
+000148: 7010 0100 0000                         |0000: invoke-direct {v0}, Ljava/lang/Object;.<init>:()V // method@0001
+00014e: 0e00                                   |0003: return-void
+      catches       : (none)
+      positions     : 
+        0x0000 line=3
+      locals        : 
+        0x0000 - 0x0004 reg=0 this Ltutorial1/HelloWorld; 
+
+    #1              : (in Ltutorial1/HelloWorld;)
+      name          : 'main'
+      type          : '([Ljava/lang/String;)V'
+      access        : 0x0009 (PUBLIC STATIC)
+      code          -
+      registers     : 3
+      ins           : 1
+      outs          : 2
+      insns size    : 8 16-bit code units
+000150:                                        |[000150] tutorial1.HelloWorld.main:([Ljava/lang/String;)V
+000160: 6200 0000                              |0000: sget-object v0, Ljava/lang/System;.out:Ljava/io/PrintStream; // field@0000
+000164: 1a01 0100                              |0002: const-string v1, "Hello, World!" // string@0001
+000168: 6e20 0000 1000                         |0004: invoke-virtual {v0, v1}, Ljava/io/PrintStream;.println:(Ljava/lang/String;)V // method@0000
+00016e: 0e00                                   |0007: return-void
+      catches       : (none)
+      positions     : 
+        0x0000 line=5
+        0x0007 line=6
+      locals        : 
+        0x0000 - 0x0008 reg=2 args [Ljava/lang/String; 
+
+  Virtual methods   -
+  source_file_idx   : 2 (HelloWorld.java)
+
