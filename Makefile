@@ -8,4 +8,5 @@ clean:
 	make -C ./dexdump clean
 	make -C ./dexlist clean
 	make -C ./dexopt clean
+	make -C ./dvz clean
 	make -C ./dalvikvm clean
