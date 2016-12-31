@@ -1,4 +1,4 @@
-The files in this folder is not original source in Android dalvik project.  
+The files in this folder are not original source files in Android dalvik project.  
 Original files see:  
 git://android.git.kernel.org/platform/dalvik.git
 
