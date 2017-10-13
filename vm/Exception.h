@@ -40,6 +40,9 @@ INLINE void dvmThrowException(const char* exceptionDescriptor,
  */
 void dvmThrowExceptionFmtV(const char* exceptionDescriptor, const char* fmt,
     va_list args);
+#ifdef __CYGWIN__
+INLINE 
+#endif
 void dvmThrowExceptionFmt(const char* exceptionDescriptor, const char* fmt, ...)
 #if defined(__GNUC__)
     __attribute__ ((format(printf, 2, 3)))

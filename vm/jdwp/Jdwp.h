@@ -165,9 +165,21 @@ void dvmJdwpClearWaitForEventThread(JdwpState* state);
  * Network functions.
  */
 bool dvmJdwpCheckConnection(JdwpState* state);
+#ifdef __CYGWIN__ 
+INLINE
+#endif
 bool dvmJdwpAcceptConnection(JdwpState* state);
+#ifdef __CYGWIN__ 
+INLINE
+#endif
 bool dvmJdwpEstablishConnection(JdwpState* state);
+#ifdef __CYGWIN__ 
+INLINE
+#endif
 void dvmJdwpCloseConnection(JdwpState* state);
+#ifdef __CYGWIN__ 
+INLINE
+#endif
 bool dvmJdwpProcessIncoming(JdwpState* state);
 
 

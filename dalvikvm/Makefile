@@ -30,3 +30,6 @@ dalvikvm.exe : $(OBJS)
 	
 clean :
 	$(RM) $(OBJS) *.exe *.exe.stackdump
+
+test :
+	./dalvikvm -cp foo.jar Foo

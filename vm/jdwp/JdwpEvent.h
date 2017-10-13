@@ -124,6 +124,9 @@ void dvmJdwpUnregisterAll(JdwpState* state);
  *
  * (Messages are sent asynchronously, and do not receive a reply.)
  */
+#ifdef __CYGWIN__ 
+INLINE
+#endif
 bool dvmJdwpSendRequest(JdwpState* state, ExpandBuf* pReq);
 
 #endif /*_DALVIK_JDWP_JDWPEVENT*/

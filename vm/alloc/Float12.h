@@ -31,7 +31,12 @@
  * TODO: do this in a less brain-dead way.  I'm sure we can do
  *       it without all of these loops.
  */
-inline unsigned short intToFloat12(unsigned int val)
+#ifndef __CYGWIN__
+inline 
+#else
+__inline__ static
+#endif
+unsigned short intToFloat12(unsigned int val)
 {
     int oval = val;
     int shift = 0;

@@ -26,7 +26,11 @@
  * (Note C99 has different notions about what the keyword combos mean.)
  */
 #ifndef _DALVIK_GEN_INLINES             /* only defined by Inlines.c */
+#ifndef __CYGWIN__
 # define INLINE extern __inline__
+#else
+# define INLINE __inline__ static
+#endif
 #else
 # define INLINE
 #endif
