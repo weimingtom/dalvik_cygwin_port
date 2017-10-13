@@ -32,4 +32,4 @@ clean :
 	$(RM) $(OBJS) *.exe *.exe.stackdump
 
 test :
-	./dalvikvm -cp foo.jar Foo
+	./dalvikvm.exe -Xbootclasspath:./framework/core.jar:./framework/ext.jar:./framework/framework.jar -classpath foo.jar Foo
