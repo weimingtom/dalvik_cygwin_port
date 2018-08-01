@@ -5,7 +5,7 @@ AR := ar rcs
 CFLAGS := -I../libnativehelper/include/nativehelper -I.. -DUSE_DL_PREFIX=1
 CFLAGS += -DANDROID=1 -DNO_MALLINFO=1 
 # for sched_policy.c
-CFLAGS += -DHAVE_SCHED_H -DHAVE_PTHREADS=1
+CFLAGS += -DHAVE_SCHED_H -DHAVE_PTHREADS=1 -g3 -O0
 
 # -DUSE_MAX_ALLOWED_FOOTPRINT=1 
 LIBS := ../vm/libdvm.a ../libdex/libdex.a ../liblog/liblog.a
@@ -33,3 +33,16 @@ clean :
 
 test :
 	./dalvikvm.exe -Xbootclasspath:./framework/core.jar:./framework/ext.jar:./framework/framework.jar -classpath foo.jar Foo
+
+debug :
+	gdb --args ./dalvikvm.exe -Xbootclasspath:./framework/core.jar:./framework/ext.jar:./framework/framework.jar -classpath foo.jar Foo
+
+
+test2 :
+	./dalvikvm.exe -classpath foo.jar Foo
+
+debug2 :
+	gdb --args ./dalvikvm.exe -classpath foo.jar Foo
+	
+	
+	

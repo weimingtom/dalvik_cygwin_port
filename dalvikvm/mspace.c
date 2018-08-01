@@ -182,10 +182,12 @@ mspace create_contiguous_mspace_with_base(size_t starting_capacity,
      * for cs->brk not to be page-aligned at this point.
      */
     char *prot_brk = (char *)ALIGN_UP(cs->brk, pagesize);
+#ifndef __CYGWIN__
     if ((mprotect(base, prot_brk - (char *)base, PROT_READ | PROT_WRITE) < 0) ||
         (mprotect(prot_brk, cs->top - prot_brk, PROT_NONE) < 0)) {
       goto error;
     }
+#endif
   }
 
   cs->m = m;

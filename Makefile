@@ -1,4 +1,5 @@
-#need libffi
+#need libffi-devel
+#need zlib-devel
 
 all:
 

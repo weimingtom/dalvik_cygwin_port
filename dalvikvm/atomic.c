@@ -20,6 +20,9 @@
 #else
 #include <sched.h>
 #endif
+#ifdef __CYGWIN__
+#include <windows.h>
+#endif
 
 /*****************************************************************************/
 #if defined(HAVE_MACOSX_IPC)
@@ -163,6 +166,7 @@ int32_t android_atomic_swap(int32_t value, volatile int32_t* addr) {
 }
 
 int android_atomic_cmpxchg(int32_t oldvalue, int32_t newvalue, volatile int32_t* addr) {
+#ifndef __CYGWIN__
     int xchg;
     asm volatile
     (
@@ -173,6 +177,9 @@ int android_atomic_cmpxchg(int32_t oldvalue, int32_t newvalue, volatile int32_t*
     : "a" (oldvalue), "c" (newvalue), "d" (addr)
     );
     return xchg;
+#else
+	return InterlockedCompareExchange(addr, newvalue, oldvalue); 
+#endif
 }
 
 #define NEED_QUASIATOMICS 1

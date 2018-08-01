@@ -7,7 +7,7 @@ CFLAGS := -I../ -I. -I../libnativehelper/include/nativehelper
 CFLAGS += -fstrict-aliasing -Wstrict-aliasing=2 -fno-align-jumps
 CFLAGS += -DWITH_PROFILER -DWITH_DEBUGGER -DDVM_RESOLVER_CACHE=0
 CFLAGS += -DDVM_SHOW_EXCEPTION=1 -DOS_SHARED_LIB_FORMAT_STR="\"lib%s.so\""
-CFLAGS += -DDVM_NO_ASM_INTERP 
+CFLAGS += -DDVM_NO_ASM_INTERP -g3 -O0
 
 #__CYGWIN__
 CFLAGS += -DHAVE_SYS_UIO_H
